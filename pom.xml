@@ -56,9 +56,8 @@
 		<dependency>
 			<groupId>de.adorsys</groupId>
 			<artifactId>psd2-validator</artifactId>
-			<version>1.0</version>
 			<scope>system</scope>
-			<systemPath>C:/prj/xs2a/psd2-validator/target/psd2-validator-1.16-SNAPSHOT.jar</systemPath>
+			<systemPath>${basedir}/lib/psd2-validator-1.16-SNAPSHOT.jar</systemPath>
 		</dependency>
 	</dependencies>
 
