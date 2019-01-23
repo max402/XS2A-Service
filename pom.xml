@@ -23,11 +23,42 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.nimbusds</groupId>
+			<artifactId>nimbus-jose-jwt</artifactId>
+			<version>6.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>no.difi.commons</groupId>
+			<artifactId>commons-certvalidator</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>de.adorsys</groupId>
+			<artifactId>psd2-validator</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>C:/prj/xs2a/psd2-validator/target/psd2-validator-1.16-SNAPSHOT.jar</systemPath>
 		</dependency>
 	</dependencies>
 
