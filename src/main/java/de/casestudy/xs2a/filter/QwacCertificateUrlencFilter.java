@@ -17,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,10 +31,12 @@ public class QwacCertificateUrlencFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         String encodedTppQwacCert = request.getHeader("tpp-qwac-certificate-urlenc");
+        String decodedTppQwacCert = URLDecoder.decode(encodedTppQwacCert, "UTF-8");
+        log.info("Decoded cert: " + decodedTppQwacCert);
 
-        if (StringUtils.isNotBlank(encodedTppQwacCert)) {
+        if (StringUtils.isNotBlank(decodedTppQwacCert)) {
             try {
-                TppCertificateData tppCertificateData = CertificateExtractorUtil.extract(encodedTppQwacCert);
+                TppCertificateData tppCertificateData = CertificateExtractorUtil.extract(decodedTppQwacCert);
                 TppInfo tppInfo = new TppInfo();
                 tppInfo.setAuthorisationNumber(tppCertificateData.getPspAuthorisationNumber());
                 tppInfo.setTppName(tppCertificateData.getName());
