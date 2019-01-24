@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLDecoder;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,6 +31,15 @@ public class QwacCertificateUrlencFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
+
+        Enumeration<String> headerNames = request.getHeaderNames();
+
+        if (headerNames != null) {
+            while (headerNames.hasMoreElements()) {
+                String headerName = headerNames.nextElement();
+                log.info("Header: " + headerName + " : " + request.getHeader(headerName));
+            }
+        }
         String encodedTppQwacCert = request.getHeader("tpp-qwac-certificate-urlenc");
 
         if (StringUtils.isNotBlank(encodedTppQwacCert)) {
