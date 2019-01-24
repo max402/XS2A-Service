@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>de.adorsys</groupId>
+  <artifactId>psd2-validator</artifactId>
+  <versioning>
+    <versions>
+      <version>1.16-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20190124131132</lastUpdated>
+  </versioning>
+</metadata>

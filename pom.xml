@@ -18,6 +18,13 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>local-maven-repo</id>
+			<url>file:///${project.basedir}/local-maven-repo</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -57,8 +64,6 @@
 			<groupId>de.adorsys</groupId>
 			<artifactId>psd2-validator</artifactId>
 			<version>1.16-SNAPSHOT</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/psd2-validator-1.16-SNAPSHOT.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
