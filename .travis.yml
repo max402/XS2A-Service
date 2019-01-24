@@ -8,3 +8,7 @@ cache:
 
 notifications:
   email: false
+deploy:
+  skip_cleanup: true
+  - provider: heroku
+  api_key: "586e7d22-151b-4b46-b20a-48edf2a7ada5"
