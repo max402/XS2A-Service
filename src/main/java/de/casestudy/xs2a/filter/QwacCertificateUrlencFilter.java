@@ -65,12 +65,6 @@ public class QwacCertificateUrlencFilter extends OncePerRequestFilter {
                         .collect(Collectors.toList());
                 tppInfo.setTppRoles(xs2aTppRoles);
 
-//                if (!tppRoleValidationService.hasAccess(tppInfo, request)) {
-//                    log.error("Access forbidden for TPP with authorisation number: {}", tppCertificateData.getPspAuthorisationNumber());
-//                    response.sendError(HttpServletResponse.SC_FORBIDDEN, "You don't have access to this resource");
-//                    return;
-//                }
-//
                 tppInfoHolder.setTppInfo(tppInfo);
             } catch (CertificateValidationException e) {
                 log.debug(e.getMessage());
